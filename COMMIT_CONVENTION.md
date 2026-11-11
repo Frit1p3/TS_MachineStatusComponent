@@ -50,11 +50,11 @@ fix/api-error-handling
 ## Workflow recommandé
 
 ```bash
-git switch -c feat/machine-schema
+git switch -c feat/machine-schemas
 # Développer puis vérifier les changements
-git add src/schema.ts
+git add src/schemas.ts
 git commit -m "feat(schema): validate machine status with zod"
-git push -u origin feat/machine-schema
+git push -u origin feat/machine-schemas
 # Ouvrir ensuite une Pull Request vers main.
 ```
 

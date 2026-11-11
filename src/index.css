@@ -1,111 +1,197 @@
+/* Design System Tokens — Portfolio Professionnel & Applications Industrielles B2B (v2) */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Palette de Base */
+  --bg-app: #f8f9fa; /* Blanc cassé chaud et professionnel */
+  --bg-surface: #ffffff; /* Surface principale blanche pour modules et cartes */
+  --bg-secondary: #f1f4f8; /* Gris très clair pour surfaces secondaires */
+  --bg-code: #edf2f7; /* Fond pour zones de code et inspecteurs */
+  --bg-panel: #ffffff; /* Fond des panneaux */
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Textes & Contrastes */
+  --text-primary: #0f172a; /* Gris anthracite profond */
+  --text-heading: #0a2540; /* Bleu profond structurant pour titres */
+  --text-secondary: #475569; /* Gris moyen pour métadonnées et explications */
+  --text-muted: #64748b; /* Gris atténué pour labels et indicateurs */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  /* Bordures & Séparations */
+  --border-subtle: #e2e8f0; /* Bordures douces et nettes */
+  --border-medium: #cbd5e1; /* Bordures d'accent ou d'interaction */
+  --border-strong: #94a3b8; /* Bordures marquées */
+
+  /* Couleurs Structurantes */
+  --color-deep-blue: #0f2b48; /* Bleu profond : architecture, confiance, ancrage */
+  --color-deep-blue-hover: #0a1f34;
+  --color-cyan-tech: #0284c7; /* Cyan technique : accent fonctionnel, focus, données actives */
+  --color-cyan-tech-hover: #0369a1;
+  --color-cyan-bg: rgba(2, 132, 199, 0.08); /* Fond léger pour accent cyan */
+  --color-cyan-border: rgba(2, 132, 199, 0.28);
+
+  /* Couleurs d'État Fonctionnelles (Strictement réservées aux statuts) */
+  --state-success-text: #15803d;
+  --state-success-bg: #f0fdf4;
+  --state-success-border: #bbf7d0;
+  --state-success-dot: #16a34a;
+
+  --state-warning-text: #b45309;
+  --state-warning-bg: #fffbeb;
+  --state-warning-border: #fde68a;
+  --state-warning-dot: #d97706;
+
+  --state-error-text: #b91c1c;
+  --state-error-bg: #fef2f2;
+  --state-error-border: #fecaca;
+  --state-error-dot: #dc2626;
+
+  --state-info-text: #0369a1;
+  --state-info-bg: #f0f9ff;
+  --state-info-border: #bae6fd;
+  --state-info-dot: #0284c7;
+
+  /* Ombres Subtiles (Rendu calme et maîtrisé, pas d'ombres saturées) */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+
+  /* Typographies */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Rayons de bordure précis */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 9999px;
+
+  /* Variables héritées rétro-compatibles */
+  --bg: var(--bg-app);
+  --text: var(--text-secondary);
+  --text-h: var(--text-primary);
+  --border: var(--border-subtle);
+  --code-bg: var(--bg-code);
+  --panel-bg: var(--bg-surface);
+  --accent: var(--color-cyan-tech);
+  --accent-bg: var(--color-cyan-bg);
+  --accent-border: var(--color-cyan-border);
+  --shadow: var(--shadow-md);
+
+  /* Réglages globaux du document */
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--bg-app);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
+/* Thème Sombre Technique (Mode Supervision Haute Lisibilité) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-app: #0b1329; /* Bleu nuit très profond et sobre */
+    --bg-surface: #111c38; /* Surface technique bleu ardoise */
+    --bg-secondary: #172445;
+    --bg-code: #0e1832;
+    --bg-panel: #111c38;
+
+    --text-primary: #f1f5f9;
+    --text-heading: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --border-subtle: #1e2e54;
+    --border-medium: #2a3e6e;
+    --border-strong: #3b528a;
+
+    --color-deep-blue: #1e3a5f;
+    --color-cyan-tech: #38bdf8;
+    --color-cyan-tech-hover: #0ea5e9;
+    --color-cyan-bg: rgba(56, 189, 248, 0.12);
+    --color-cyan-border: rgba(56, 189, 248, 0.35);
+
+    --state-success-text: #4ade80;
+    --state-success-bg: rgba(34, 197, 94, 0.12);
+    --state-success-border: rgba(34, 197, 94, 0.3);
+
+    --state-warning-text: #fbbf24;
+    --state-warning-bg: rgba(245, 158, 11, 0.12);
+    --state-warning-border: rgba(245, 158, 11, 0.3);
+
+    --state-error-text: #f87171;
+    --state-error-bg: rgba(239, 68, 68, 0.12);
+    --state-error-border: rgba(239, 68, 68, 0.3);
+
+    --state-info-text: #60a5fa;
+    --state-info-bg: rgba(59, 130, 246, 0.12);
+    --state-info-border: rgba(59, 130, 246, 0.3);
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+
+    --bg: var(--bg-app);
+    --text: var(--text-secondary);
+    --text-h: var(--text-primary);
+    --border: var(--border-subtle);
+    --code-bg: var(--bg-code);
+    --panel-bg: var(--bg-surface);
+    --accent: var(--color-cyan-tech);
+    --accent-bg: var(--color-cyan-bg);
+    --accent-border: var(--color-cyan-border);
+    --shadow: var(--shadow-md);
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* Typographie globale - Pas de letter-spacing négatif */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: 0;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
 p {
   margin: 0;
+  color: var(--text-secondary);
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+code, pre {
+  font-family: var(--font-mono);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Chiffres tabulaires pour toute métrique ou valeur dynamique */
+.tabular-nums,
+[data-tabular-nums] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Accessibilité : Focus outline net et visible */
+:focus-visible {
+  outline: 2px solid var(--color-cyan-tech);
+  outline-offset: 2px;
 }
