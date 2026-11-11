@@ -1,0 +1,96 @@
+{
+  "id": 12,
+  "name": "Presse composite A-12",
+  "type": "Press",
+  "manufacturer": "Schuler",
+  "model": "E2 160",
+  "serialNumber": "SN-2023-0112",
+  "location": {
+    "facility": "Usine Nord",
+    "building": "Bâtiment A",
+    "line": "Ligne 3",
+    "position": "Station 2"
+  },
+  "status": "running",
+  "statusDetails": {
+    "currentMode": "auto",
+    "currentPhase": 4,
+    "totalPhases": 6,
+    "loadPercentage": 78,
+    "elapsedMinutes": 82,
+    "uptime": "14h 32m",
+    "uptimeSeconds": 52320,
+    "lastStateChange": "2026-10-20T07:58:00Z"
+  },
+  "sensors": {
+    "temperature": {
+      "value": 178,
+      "unit": "°C",
+      "threshold": {
+        "warning": 200,
+        "critical": 250
+      },
+      "status": "normal"
+    },
+    "vibration": {
+      "value": 1.8,
+      "unit": "mm/s",
+      "threshold": {
+        "warning": 4.5,
+        "critical": 7.0
+      },
+      "status": "normal"
+    },
+    "pressure": {
+      "value": 120,
+      "unit": "bar",
+      "threshold": {
+        "warning": 80,
+        "critical": 50
+      },
+      "status": "normal"
+    },
+    "hydraulicPressure": {
+      "value": 180,
+      "unit": "bar",
+      "threshold": {
+        "warning": 150,
+        "critical": 120
+      },
+      "status": "normal"
+    }
+  },
+  "alarms": [
+    {
+      "id": "ALM-001",
+      "code": "TEMP_HIGH_WARNING",
+      "severity": "warning",
+      "message": "Température du moule légèrement élevée",
+      "timestamp": "2026-10-20T10:15:00Z",
+      "acknowledged": false
+    }
+  ],
+  "production": {
+    "today": {
+      "partsProduced": 342,
+      "target": 500,
+      "efficiency": 68.4,
+      "scrapCount": 3,
+      "scrapRate": 0.88
+    },
+    "shift": {
+      "currentShift": "Shift 1",
+      "startTime": "2026-10-20T06:00:00Z",
+      "partsProduced": 342,
+      "target": 500
+    }
+  },
+  "maintenance": {
+    "nextScheduled": "2026-10-25T06:00:00Z",
+    "lastPerformed": "2026-10-12T14:30:00Z",
+    "type": "Préventive",
+    "hoursSinceLastMaintenance": 168,
+    "recommendedIntervalHours": 500
+  },
+  "lastUpdated": "2026-10-20T12:30:00Z"
+}
